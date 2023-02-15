@@ -10,7 +10,14 @@
   <body>
     <main>
       <h1>Dang Kim Thi JavaScript App</h1>
-    </main>
+      <p>Loading content from the Api:<b id="name">...</b></p>
+      </main>
+      <script>
+        (async function(){
+         const {text} = await(await fetch('/api/message')).json();
+         document.querySelector('#name').textContent = text;
+        }());
+      </script>
   </body>
   <!-- Bạn nhấn F1(Fn + F1,Ctrl + Shift + P) ==> open Command palette;) -->
 </html>
